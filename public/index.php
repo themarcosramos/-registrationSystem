@@ -9,6 +9,11 @@ try {
     // extract(['name'=>'Marcos']);
 
 
+    if (isAjax()) {
+        die();
+    }
+
+
     //obrigo o ususario passa o índice data 
      if (!isset($data['data'])) {
 
@@ -32,11 +37,19 @@ try {
         throw new Exception("Essa view {$data['view']} não existe");
     }
     
-     extract($data['data']);
 
-     $view = $data['view'];
+    $templates = new League\Plates\Engine(VIEWS);
 
-     require VIEWS.'master.php';
+    // Render a template   //nome da view  //os dados que vai para view
+    echo $templates->render($data['view'], $data['data']);
+
+
+    //  extract($data['data']);
+
+    //  $view = $data['view'];
+
+    //  require VIEWS.'master.php';
+
 
 } catch (Exception $e) {
     var_dump(
