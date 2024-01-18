@@ -8,6 +8,11 @@ try {
     //para ter acesso a variaveis na views
     // extract(['name'=>'Marcos']);
 
+    // if ($_ENV['MAINTENANCE'] === 'true') {
+    //     // var_dump('em manutenção');
+    //     require 'maintenance.php';
+    //     die();
+    // }
 
     if (isAjax()) {
         die();
