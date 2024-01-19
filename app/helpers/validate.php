@@ -9,7 +9,6 @@ function validate(array $validations, bool $persistInputs = false, bool $checkCs
     $result = [];
     $param = '';
     foreach ($validations as $field => $validate) {
-                             //vefico se existe |   
         $result[$field] = (!str_contains($validate, '|')) ?
             singleValidation($validate, $field, $param) :
             multipleValidations($validate, $field, $param);
@@ -18,7 +17,6 @@ function validate(array $validations, bool $persistInputs = false, bool $checkCs
     if ($persistInputs) {
         setOld();
     }
-
 
     if (in_array(false, $result, true)) {
         return false;
@@ -29,7 +27,6 @@ function validate(array $validations, bool $persistInputs = false, bool $checkCs
 
 function singleValidation($validate, $field, $param)
 {
-    //vefico se existe :
     if (str_contains($validate, ':')) {
         [$validate, $param] = explode(':', $validate);
     }

@@ -17,10 +17,10 @@ class Contact
     public function store()
     {
         // $email = new stdClass();
-        // $email->fromName = 'Alexandre';
-        // $email->fromEmail = 'xandecar@hotmail.com';
-        // $email->toName = 'Joao';
-        // $email->toEmail = 'joao@email.com.br';
+        // $email->fromName = 'Marcos';
+        // $email->fromEmail = 'marcosramosdeveloper@gmail.com';
+        // $email->toName = 'teste';
+        // $email->toEmail = 'teste@email.com.br';
         // $email->subject = 'teste de mensagem';
         // $email->message = 'mensagem simples';
         // $email->template = 'contact';

@@ -11,7 +11,7 @@ class User
             return redirect('/');
         }
 
-        $user = findBy('users', 'id', $params['user']); // pegara tudo 
+        $user = findBy('users', 'id', $params['user']);
         die();
     }
 
